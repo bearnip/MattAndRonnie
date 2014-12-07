@@ -1,0 +1,57 @@
+{% import "bootstrap/wft.html" as wtf %}
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>CamJam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='main.css')}}">
+</head>
+<body>
+<div id="wrap">
+<nav>
+ <ul class="list-unstyled main-menu">
+
+    <li class="text-right"><a href="#" id="nav-close">X</a></li>
+    <li><a href="#">Home <span class="icon"></span></a></li>
+    <li><a href="#">Join Room <span class="icon"></span></a></li>
+    <li><a href="about">About <span class="icon"></span></a></li>
+    <li><a href="contact">Contact <span class="icon"></span></a></li>
+  </ul>
+</nav>
+ 
+<div class="navbar navbar-inverse navbar-fixed-top">      
+    <a class="navbar-brand" href="#">CamJam</a>
+    <div class="navbar-header pull-right">
+      <a id="nav-expander" class="nav-expander fixed">
+        MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+      </a>
+    </div>
+</div>
+<div class="well well-lg pull-left" style="width:25%;">
+<form class="form-signin" role="form" method = "POST" action = "{{ url_for('login') }}"><br>
+        <h2 class="form-signin-heading">Login</h2><br>
+        <input type="email" class="form-control" placeholder="Email" required autofocus style="margin-bottom:10px;">
+        <input type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+</div>
+<div class="jumbotron text-center pull-right" style="width:70%;">
+  <h1>Welcome to CamJam!</h1>
+  <p>A new robust online chat room for people to interact virtually with their friends and random people across the world. Go Live or join an already open room.</p>
+</div>
+{{wtf.quick_form(form)}}
+<div id="push"></div>
+	</div>
+	<div id="footer">
+      	<div class="container text-center">
+        	<p class="muted credit">&copy; Matt Hart &amp;&amp; Ronnie Simonelli</p>
+     	</div>
+	</div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='jquery.navgoco.js')}}"></script>
+    <script src="{{ url_for('static',filename='main.js')}}"></script>
+</body>
+</html>

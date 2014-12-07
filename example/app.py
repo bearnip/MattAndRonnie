@@ -31,8 +31,10 @@ def index():
     if thread is None:
         thread = Thread(target=background_thread)
         thread.start()
+    return render_template('login.html')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
     return render_template('index.html')
-
 
 @socketio.on('my event', namespace='/test')
 def test_message(message):
