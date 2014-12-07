@@ -1,10 +1,16 @@
 from gevent import monkey
 monkey.patch_all()
 
-import time
+import time, bcrypt, mysql.connector
 from threading import Thread
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, redirect, url_for
 from flask.ext.socketio import SocketIO, emit, join_room, leave_room
+from flask.ext.script import Manager, Server
+from flask.ext.bootstrap import Bootstrap
+from flask.ext.moment import Moment
+from flask.ext.wtf import Form
+from wtforms import StringField, SubmitField, PasswordField, TextAreaField, IntegerField
+from wtforms.validators import Required, Length, NumberRange, EqualTo
 
 app = Flask(__name__)
 app.debug = True
