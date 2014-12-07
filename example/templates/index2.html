@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="well well-lg pull-left" style="width:25%;">
+<form class="form-signin" role="form" method="POST" action=""><br>
+        <h2 class="form-signin-heading">Login</h2><br>
+        <input type="email" class="form-control" placeholder="Email" required autofocus style="margin-bottom:10px;">
+        <input type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+</div>
+<div class="jumbotron text-center pull-right" style="width:70%;">
+  <h1>Welcome to CamJam!</h1>
+  <p>A new robust online chat room for people to interact virtually with their friends and random people across the world. Go Live or join an already open room.</p>
+ 
+</div>
+<div id="push"></div>
+	</div>
+	<div id="footer">
+      	<div class="container text-center">
+        	<p class="muted credit">&copy; Matt Hart and Ronnie Simonelli</p>
+     	</div>
+	</div>
+{% endblock %}

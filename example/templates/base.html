@@ -1,0 +1,47 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}CamJam{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="stylesheet" href="main.css">
+{% endblock %}
+
+{% block navbar %}
+<div id="wrap">
+<nav>
+ <ul class="list-unstyled main-menu">
+
+    <li class="text-right"><a href="#" id="nav-close">X</a></li>
+    <li><a href="#">Home <span class="icon"></span></a></li>
+    <li><a href="#">Join Room <span class="icon"></span></a></li>
+    <li><a href="#">About <span class="icon"></span></a></li>
+    <li><a href="#">Contact <span class="icon"></span></a></li>
+  </ul>
+</nav>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand" href="#">CamJam</a>
+    <div class="navbar-header pull-right">
+      <a id="nav-expander" class="nav-expander fixed">
+        MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
+      </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="jquery.navgoco.js"></script>
+<script src="main.js"></script>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
